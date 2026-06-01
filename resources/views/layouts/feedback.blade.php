@@ -438,6 +438,106 @@
             padding: 0 14px 16px;
         }
 
+        body.admin-body {
+            color: #0f172a;
+            background: #f6f8fb;
+        }
+
+        body.admin-body .page-shell {
+            overflow: visible;
+        }
+
+        body.admin-body .container {
+            width: min(100% - 32px, 1180px);
+        }
+
+        body.admin-body .admin-page {
+            min-height: 100vh;
+            padding: 40px 0 64px;
+        }
+
+        body.admin-body .admin-header {
+            color: #0f172a;
+            margin-bottom: 24px;
+        }
+
+        body.admin-body .admin-header p,
+        body.admin-body .section-note,
+        body.admin-body .privacy-note,
+        body.admin-body .empty-state {
+            color: #64748b;
+        }
+
+        body.admin-body .button-primary {
+            color: #ffffff;
+            background: #0f172a;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+        }
+
+        body.admin-body .button-light {
+            color: #334155;
+            background: #ffffff;
+            box-shadow: inset 0 0 0 1px #dbe3ef;
+            backdrop-filter: none;
+        }
+
+        body.admin-body .form-card,
+        body.admin-body .admin-card,
+        body.admin-body .stat {
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            box-shadow: 0 16px 48px rgba(15, 23, 42, 0.06);
+        }
+
+        body.admin-body .form-card,
+        body.admin-body .admin-card {
+            border-radius: 18px;
+        }
+
+        body.admin-body .form-card-inner {
+            padding: 28px;
+        }
+
+        body.admin-body .section-title {
+            color: #0f172a;
+        }
+
+        body.admin-body .stats {
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        body.admin-body .stat {
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        body.admin-body .stat strong {
+            color: #0f172a;
+            font-size: 2rem;
+        }
+
+        body.admin-body .stat span {
+            color: #64748b;
+        }
+
+        body.admin-body .feedback-list {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            padding: 16px;
+        }
+
+        body.admin-body .feedback-item {
+            border-color: #e2e8f0;
+            border-radius: 16px;
+            background: #ffffff;
+        }
+
+        body.admin-body .pill {
+            color: #1d4ed8;
+            background: #eff6ff;
+        }
+
         @media (min-width: 760px) {
             .hero {
                 padding-top: 78px;
@@ -465,11 +565,26 @@
                 padding-inline: 28px;
                 font-size: 1.1rem;
             }
+
+            body.admin-body .form-card-inner {
+                padding: 34px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body.admin-body .admin-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            body.admin-body .stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     @stack('styles')
 </head>
-<body>
+<body class="@yield('body_class')">
     <div class="page-shell">
         @yield('body')
     </div>

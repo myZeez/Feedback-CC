@@ -1,6 +1,7 @@
 @extends('layouts.feedback')
 
 @section('title', 'Admin Feedback - Cellcom Palangkaraya')
+@section('body_class', 'admin-body')
 
 @section('body')
     <main class="admin-page">

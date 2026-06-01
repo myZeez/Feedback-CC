@@ -1,6 +1,7 @@
 @extends('layouts.feedback')
 
 @section('title', 'Login Admin - Feedback Cellcom')
+@section('body_class', 'admin-body')
 
 @section('body')
     <main class="admin-page">
@@ -14,6 +15,9 @@
 
             <section class="form-card">
                 <div class="form-card-inner">
+                    <h2 class="section-title">Selamat datang</h2>
+                    <p class="section-note">Gunakan akun admin untuk membuka dashboard feedback.</p>
+
                     @if ($errors->any())
                         <div class="error-list">
                             {{ $errors->first() }}
